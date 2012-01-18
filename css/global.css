@@ -20,4 +20,4 @@ header h2 { position:absolute; top:22px; left:190px; }
 header ul { display:block; position:absolute; top:8px; left:400px; border-left:1px solid #fff; height:30px; }
 header li { float:left; margin:14px 0 0 28px; vertical-align:bottom; }
 
-.content { margin:45px 0 0 46px; padding-top:20px;background-color:#FFF; }
+.content { width:824px; margin:45px 0 0 46px; padding-top:20px;background-color:#FFF; }
