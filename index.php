@@ -1,3 +1,8 @@
+<?php
+require_once('lib/Util.class.php');
+$ua = Utilities::get_browser_info($_SERVER['HTTP_USER_AGENT']);
+$browser = (!empty($ua['class_name'])) ? $ua['class_name'] : "";
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +15,7 @@
   <link rel="stylesheet" type="text/css" href="/css/resume.css">
 	<script type='text/javascript'>(function () { var a = ['header', 'nav', 'section', 'article', 'aside', 'footer', 'time']; for(var i=0,l=a.length;i<l;i++){ document.createElement(a[i]); } })()</script>
 </head>
-<body>  
+<body class="<?php echo($browser)?>">  
 <header>
   <img src="/img/logo_45x45.png">
   <h1>Purlative</h1>
@@ -22,6 +27,20 @@
   </ul>
 </header>
 <section class='content'>
+  <div class="content-item">
+    <time>
+      <span class="post-time">09:10 am</span>
+      <span class="month">January</span>
+      <span class="day">19</span>
+    </time>
+    <article class="post">
+      <p class="caption">
+        Added php code to inspect the ua string to determine the client browser and then added that string to the body tag as a class.          This approach allows me to do easy conditional styling! w00t :) I was concerned that I would need to fix a few things here and there based on the clients browser.  <br /><br />
+        I have so much to do today that I can't do more work on this site till later this evening... 
+      </p>
+    </article>
+  </div>
+
   <div class="content-item">
     <time>
       <span class="post-time">05:15 pm</span>
