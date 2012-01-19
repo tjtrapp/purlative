@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="http://yui.yahooapis.com/3.4.1/build/cssreset/cssreset.css" type="text/css">
   <link rel="stylesheet" type="text/css" href="/css/global.css">
   <link rel="stylesheet" type="text/css" href="/css/content.css">
+  <link rel="stylesheet" type="text/css" href="/css/resume.css">
 	<script type='text/javascript'>(function () { var a = ['header', 'nav', 'section', 'article', 'aside', 'footer', 'time']; for(var i=0,l=a.length;i<l;i++){ document.createElement(a[i]); } })()</script>
 </head>
 <body>  
@@ -15,12 +16,34 @@
   <h1>Purlative</h1>
   <h2>smarter, not harder.</h2>
   <ul>
-    <li><a href="#work">work stuff</a></li>
-    <li><a href="#home">home stuff</a></li>
-    <li><a href="https://github.com/tjtrapp/purlative" target="_blank" alt="purlative on github">GitHub.com Repository</a></li>
+    <li><a href="#/resume">resume</a></li>
+    <li><a href="#/">overview</a></li>
+    <li><a href="https://github.com/tjtrapp/purlative" target="_blank" alt="purlative on github">sourcecode_on_github</a></li>
   </ul>
 </header>
 <section class='content'>
+  <div class="content-item">
+    <time>
+      <span class="post-time">05:15 pm</span>
+      <span class="month">January</span>
+      <span class="day">18</span>
+    </time>
+    <article class="post">
+      <p class="caption">
+        I hooked up backbone, yay! this means i added a lot of javascript code :) <br /> <br />
+        you can now toggle between the two views without refreshing the page.  I created 5 views, a model and a collection.  I created a method in my contentitems collection named initWithSelector, it creates the collection based on the data on the page (aside: i miss objective-c... i think thats why i named the method so objective-c-ishly).  This approach allows me to continue adding posts manually until the next steps where I hook up a database, create an api and make things really "appy".  <br /> <br />
+        I really wanted to use something like mongodb but im hosting on godaddy and cannot use it, im stuck with mysql.  oh well.  ill probably do something simple since I only need to create one routine to parse into my content items collection.
+      </p>
+      <div class="action-item">ok, next up:
+        <ol>
+          <li>add a database</li>
+          <li>add a page to create posts</li>
+          <li>make this page completely data driven</li>
+        </ol>
+      </div>
+    </article>
+  </div>
+
   <div class="content-item">
     <time>
       <span class="post-time">11:30 am</span>
@@ -34,8 +57,8 @@
       </p>
       <div class="action-item">next steps after that are:
         <ol>
-          <li>break 4 housework :/</li>
-          <li>start writing js code to flip b/t views</li>
+          <li class='done'>break 4 housework :/</li>
+          <li class='done'>start writing js code to flip b/t views</li>
           <li>add some data storage mechanism</li>
         </ol>
       </div>
@@ -88,5 +111,28 @@
     </article>
   </div>
 </section>
+
+<!-- get the min jquery bc i dont plan on stepping thru that code but get the dev bb and underscore -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/fxs/underscore-1.3.0.js"></script>
+<script type="text/javascript" src="/js/fxs/backbone-0.5.3.js"></script>
+<script type="text/javascript" src="/js/global.js"></script>
+<script type="text/javascript" src="/js/router.js"></script>
+<script type="text/javascript" src="/js/models/contentitem.model.js"></script>
+<script type="text/javascript" src="/js/models/contentitems.collection.js"></script>
+<script type="text/javascript" src="/js/views/posttime.view.js"></script>
+<script type="text/javascript" src="/js/views/post.view.js"></script>
+<script type="text/javascript" src="/js/views/contentitem.view.js"></script>
+<script type="text/javascript" src="/js/views/overview.view.js"></script>
+<script type="text/javascript" src="/js/views/resume.view.js"></script>
+<script type="text/javascript" src="/js/application.js"></script>
+
+<script type="text/javascript">
+$(function () {
+  var p = window._PURLATIVE; // ready
+  new p.app.PurlativeApplication().render(); // set, go
+});
+</script>
+
 </body>
 </html>
