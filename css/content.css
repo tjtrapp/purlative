@@ -1,6 +1,6 @@
 
 .content-item { margin:10px 0; border-bottom:1px solid #000; }
-.content-item time { display:inline-block; vertical-align:top; width:84px; }
+.content-item time { display:inline-block; vertical-align:top; width:94px; }
 .content-item time .post-time { display:block; font-weight:bold; }
 .content-item time .month, .content-item time .day { font-weight:bold; color:#AFAFAF; margin-right:5px;  }
 
