@@ -30,7 +30,7 @@
     </time>
     <article class="post">
       <p class="caption">
-        I hooked up backbone, yay! this means i added a lot of javascript code :) <br /> <br />
+        I hooked up <a target="_blank" href="http://documentcloud.github.com/backbone/" alt="backbone website">backbone</a>, yay! this means i added a lot of javascript code :) <br /> <br />
         you can now toggle between the two views without refreshing the page.  I created 5 views, a model and a collection.  I created a method in my contentitems collection named initWithSelector, it creates the collection based on the data on the page (aside: i miss objective-c... i think thats why i named the method so objective-c-ishly).  This approach allows me to continue adding posts manually until the next steps where I hook up a database, create an api and make things really "appy".  <br /> <br />
         I really wanted to use something like mongodb but im hosting on godaddy and cannot use it, im stuck with mysql.  oh well.  ill probably do something simple since I only need to create one routine to parse into my content items collection.
       </p>

@@ -9,6 +9,7 @@
 .content-item li { list-style:inherit; margin-left:20px; }
 
 .post .caption { font-size:1.2em; }
+.post .caption a { color:blue; }
 .post .action-item { display:inline-block; border-top:1px solid #888; border-bottom:1px solid #888; padding:5px; margin-top:10px;
     box-shadow: inset 0 1px 1px -1px #FFFF00; background-color:#FAFAFA; 
 }
