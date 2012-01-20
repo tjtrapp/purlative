@@ -28,6 +28,18 @@ $browser = (!empty($ua['class_name'])) ? $ua['class_name'] : "";
 </header>
 <section class='content'>
   <div class="content-item">
+     <time>
+       <span class="post-time">06:51 pm</span>
+       <span class="month">January</span>
+       <span class="day">19</span>
+     </time>
+     <article class="post">
+       <p class="caption">
+         Two computers is a luxury, yes.  But... but... it allows me to test my committed code by pulling it down on my other computer.  am i paranoid? yes.  but when has a little extra testing hurt anyone?
+       </p>
+     </article>
+   </div>
+  <div class="content-item">
     <time>
       <span class="post-time">09:10 am</span>
       <span class="month">January</span>
