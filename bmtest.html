@@ -52,13 +52,15 @@
             typeSelect = document.getElementById("vehicleType"),
             type = typeSelect.value,
             v = (type == "car") ? new m.Instances.Car() : new m.Instances.MotorCycle();
-
+            
+        if (!name) { return; }
+        
         v.setName(name);    
-
+        
         renderVehicle(v);
-
+        
         nameInput.value = ""; // reset
-
+        
     }
   
     function renderVehicle(v) {
@@ -73,21 +75,23 @@
         li.appendChild(span);
         li.appendChild(btn);
         
+        attach(btn, "click", (function (v) {
+            var info = v.info();
+            return function (e) { alert(info); }
+        })(v));
+        
         vList.appendChild(li);
-        
-        attach(btn, 'click', function (event) {
-            alert(v.getName() + " -- " + v.getSeats() + " -- " + v.getWheels());
-            event.preventDefault();
-            event.stopPropagation();
-            return false;
-        });
-        
+
+    }
+    
+    function handleClick() {
+        alert(this.info());
     }
     
 })(window.Mint);
 
 // global function to handle attaching the click event
-function attach(obj, event, fn) {
+function attach(obj, event, fn) {   
     obj.addEventListener(event, fn, false);
 }
 

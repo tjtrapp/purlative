@@ -17,7 +17,8 @@ Mint.Abstract.Vehicle.prototype = (function () {
         getName: function () { return name; },
         setName: function (val) { name = val; },
         getWheels: function () { return wheels; },
-        setWheels: function (val) { wheels = val; }
+        setWheels: function (val) { wheels = val; },
+        info: function () { return name + " -- " + seats + " -- " + wheels; }
     }
         
 })();
