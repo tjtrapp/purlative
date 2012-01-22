@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BM Test Page</title>
+</head>
+<body>
+<form id="testForm">
+  <label for="vehicleName"><input id="vehicleName"></label>
+  <select id="vehicleType"><option value="car">car</option><option value="motorcycle">motorcycle</option></select>
+  <button id="enterButton">make it</button>
+</form>
+<ul id="container"></ul>
+<script type='text/javascript' src="/js/bm.js"></script>
+<script type='text/javascript'>
+(function (m) {
+  
+    // normally, this would b in a seperate js file called application or something modular like
+    var vList = document.getElementById("container"); // if these were classes we could use querySelector or querySelectorAll
+
+    if (document.addEventListener) {
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.removeEventListener("DOMContentLoaded", arguments.callee, false);
+            handleReady();
+        }, false );
+
+    } else {
+        // sorry 
+    }
+  
+    function handleReady() {
+
+        var form = document.getElementById("testForm"),
+            btn = document.getElementById("enterButton");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        });
+
+        btn.addEventListener("click", function (e) {
+            addNewVehicle();      
+        }, false);
+
+    }
+  
+    function addNewVehicle() {
+
+        var nameInput = document.getElementById("vehicleName"),
+            name = nameInput.value,
+            typeSelect = document.getElementById("vehicleType"),
+            type = typeSelect.value,
+            v = (type == "car") ? new m.Instances.Car() : new m.Instances.MotorCycle();
+
+        v.setName(name);    
+
+        renderVehicle(v);
+
+        nameInput.value = ""; // reset
+
+    }
+  
+    function renderVehicle(v) {
+
+        var li = document.createElement("li"),
+            span = document.createElement("span"),
+            btn = document.createElement("button");
+        
+        span.innerHTML = v.getName();
+        btn.innerHTML = "Get Info";
+        
+        li.appendChild(span);
+        li.appendChild(btn);
+        
+        vList.appendChild(li);
+        
+        attach(btn, 'click', function (event) {
+            alert(v.getName() + " -- " + v.getSeats() + " -- " + v.getWheels());
+            event.preventDefault();
+            event.stopPropagation();
+            return false;
+        });
+        
+    }
+    
+})(window.Mint);
+
+// global function to handle attaching the click event
+function attach(obj, event, fn) {
+    obj.addEventListener(event, fn, false);
+}
+
+</script>
+</body>
+</html>
