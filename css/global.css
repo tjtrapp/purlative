@@ -17,7 +17,27 @@ header { font-family:Helvetica; color:#fff; letter-spacing:2px; }
 header img { position:absolute; top:0; left:0; }
 header h1 { position:absolute; top:10px; left:45px; font-size:2em; }
 header h2 { position:absolute; top:22px; left:190px; }
-header ul { display:block; position:absolute; top:8px; left:400px; border-left:1px solid #fff; height:30px; }
-header li { float:left; margin:14px 0 0 28px; vertical-align:bottom; }
+
+/* menu */
+header > ul { display:block; position:absolute; top:8px; left:400px; border-left:1px solid #fff; height:30px; }
+header > ul > li { position:relative; top:-14px; float:left; margin:14px 0 0 28px; vertical-align:bottom; }
+header > ul > li.active h3 { background-color:#444; box-shadow: inset 0px 7px 10px -4px #222; }
+header > ul > li > h3 { position:relative; top:2px; cursor:default; padding:10px 10px 8px 10px; 
+    border-left:1px solid #000; border-top:1px solid #000; border-right:1px solid #000; 
+    border-top-left-radius:4px; border-top-right-radius:4px;
+}
+
+/* drop down */
+header > ul > li > ul { display:none; }
+header > ul > li.active > ul { display:block; position:absolute; top:37px; background-color:#444;
+    border-left:1px solid #222; border-bottom:1px solid #222; border-right:1px solid #222;
+    border-bottom-left-radius:9px; border-bottom-right-radius:9px; 
+    -moz-box-shadow: 0px 12px 25px 0px #222; -webkit-box-shadow: 0px 12px 25px 0px #222; box-shadow: 0px 12px 25px 0px #222;
+}
+header > ul > li > ul > li { border-top:1px dashed #fff;}
+header > ul > li > ul > li:first-child { border-top:0 none; }
+header > ul > li > ul a { color: #fff; }
+
+.nav .nav-item a { display:block; padding:10px; }
 
 .content { width:824px; margin:45px 0 0 46px; padding-top:20px;background-color:#FFF; }

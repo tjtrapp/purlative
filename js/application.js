@@ -20,6 +20,8 @@
                 collection: this.models.contentItems
             });
             
+            this.wireMenu();
+            
             this.router = new p.app.Router();
             this.bindRoutes(this.router);			
             Backbone.history.start();
@@ -61,13 +63,29 @@
             router.bind("route:goResume", function () { 
                 p.util.log("route:goResume");
                 self.renderResume();
+                self.hideMenu();
             });
             
             router.bind("route:goDefault", function () {
                 p.util.log("route:goDefault");
                 self.renderOverview();
+                self.hideMenu();
             })
 
+        },
+        
+        wireMenu: function () {
+            $("header > ul > li").each(function (idx, el) {
+                $(el).hover(function () { 
+                    $(this).addClass("active"); 
+                }, function () { 
+                    $(this).removeClass("active"); 
+                });
+            });
+        },
+        
+        hideMenu: function () {
+            $(".nav .active").removeClass("active");
         }
         
     });

@@ -1,7 +1,9 @@
 <?php
 require_once('lib/Util.class.php');
-$ua = Utilities::get_browser_info($_SERVER['HTTP_USER_AGENT']);
+
+$ua = Util::get_browser_info($_SERVER['HTTP_USER_AGENT']);
 $browser = (!empty($ua['class_name'])) ? $ua['class_name'] : "";
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,10 +22,18 @@ $browser = (!empty($ua['class_name'])) ? $ua['class_name'] : "";
   <img src="/img/logo_45x45.png">
   <h1>Purlative</h1>
   <h2>smarter, not harder.</h2>
-  <ul>
-    <li><a href="#/resume">resume</a></li>
-    <li><a href="#/">overview</a></li>
-    <li><a href="https://github.com/tjtrapp/purlative" target="_blank" alt="purlative on github">sourcecode_on_github</a></li>
+  <ul class="nav">
+      <li class="">
+          <h3>work stuff</h3>
+          <ul>
+            <li class="nav-item"><a href="#/resume">resume</a></li>
+            <li class="nav-item"><a href="#/">overview</a></li>
+            <li class="nav-item"><a href="https://github.com/tjtrapp/purlative" target="_blank" alt="purlative on github">sourcecode_on_github</a></li>
+          </ul>
+        </li>
+      <li>
+          <h3>fun stuff</h3>
+      </li>      
   </ul>
 </header>
 <section class='content'>

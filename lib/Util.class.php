@@ -1,6 +1,6 @@
 <?php 
 
-class Utilities {
+class Util {
   
   static function get_browser_info($u_agent) {
       $bname = 'Unknown';
@@ -108,6 +108,32 @@ class Utilities {
           'class_name' => $browser_class_name
       );
   }
+  
+  /**
+   * Thank you CakePHP =)  I borrowed this code from CakePHP.
+   * 
+   * Prints out debug information about given variable.
+   *
+   * @param boolean $var Variable to show debug information for.
+   * @param boolean $showHtml If set to true, the method prints the debug data in a screen-friendly way.
+   * @param boolean $showFrom If set to true, the method prints from where the function was called.
+   */
+  	function debug($var = false, $showHtml = false, $showFrom = true) {
+  			$ROOT = '';
+  			if ($showFrom) {
+  				$calledFrom = debug_backtrace();
+  				echo '<strong>' . substr($calledFrom[0]['file'], 1) . '</strong>';
+  				echo ' (line <strong>' . $calledFrom[0]['line'] . '</strong>)';
+  			}
+  			echo "\n<pre>\n";
+
+  			$var = print_r($var, true);
+  			if ($showHtml) {
+  				$var = str_replace('<', '&lt;', str_replace('>', '&gt;', $var));
+  			}
+  			echo $var . "\n</pre>\n";
+  		
+  	}
   
 }
 
