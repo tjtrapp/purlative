@@ -33,6 +33,9 @@ $browser = (!empty($ua['class_name'])) ? $ua['class_name'] : "";
         </li>
       <li>
           <h3>fun stuff</h3>
+          <ul>
+              <li class="nav-item"><a href="/carousel/3.html" target="_blank">carousel</a></li>
+          </ul>
       </li>      
   </ul>
 </header>
