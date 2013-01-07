@@ -1,0 +1,77 @@
+
+h1 { text-align:center; margin:0; }
+
+.tj-carousel {
+    position:relative;
+    width:550px;
+    height:170px;
+    border:1px solid #000;
+    margin:30px auto;
+}
+
+.tj-carousel > button {
+    display:block;
+    height:30px;
+    width:30px;
+    padding:0;
+    margin:0;
+}
+
+.tj-carousel .prev-button {
+    position:absolute;
+    left:25px;
+    top:37%;
+}
+
+.tj-carousel .next-button {
+    position:absolute;
+    right:25px;
+    top:37%;
+}
+
+.tjc-container {
+    position:relative;
+    margin:0 100px;
+    padding:0;
+    width:350px;
+    height:100%;
+    display:block;
+    overflow:hidden;
+}
+
+.tjc-container > ul {
+    display:inline-block;
+    padding:0;
+    margin:0;
+    height:100%;
+}
+
+.tjc-container .tjc-item {
+    position:relative;
+    top:65px;
+    margin:-50px 13px 0 14px;
+    display:inline-block;
+    text-align:left;
+    width:85px;
+    height:135px;
+    border: 1px solid #000000;
+    left:0;
+    opacity:1;
+    list-style:none;
+    float:left;
+}
+
+.tjc-container .tjc-item img {
+    display:inline;
+}
+
+.tjc-item > div {
+    position:absolute;
+    top:25px;
+    left:10px;
+    height:90px;
+}
+
+.tjc-item:nth-child(3N) > div {
+    top:0;
+}
