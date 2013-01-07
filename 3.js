@@ -147,9 +147,7 @@
                 this.moveLeft();                
             } else if (className.indexOf("next-button") != -1) {
                 this.moveRight();
-            } else {
-                throw "Unknown button click event";
-            }
+            } 
             
             return this;
             
@@ -168,9 +166,7 @@
                 this.moveLeft();
             } else if (key === 39) {
                 this.moveRight();
-            } else {
-                throw "Unknown key";
-            }
+            } 
             
             return this;
             
