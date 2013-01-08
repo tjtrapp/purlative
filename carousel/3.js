@@ -312,7 +312,7 @@
         */
         createStyle: function (distance) {
             
-            var s = "-webkit-transition-property: left; -webkit-transition-duration: 1s; -moz-transition-property: left; -moz-transition-duration: 1s; transition-property: left; transition-duration: 1s;",
+            var s = "-ms-transition-property: left; -ms-transition-duration: 1s; -webkit-transition-property: left; -webkit-transition-duration: 1s; -moz-transition-property: left; -moz-transition-duration: 1s; transition-property: left; transition-duration: 1s;",
                 left = "left:" + distance + "px;";
 
             return s + left;
